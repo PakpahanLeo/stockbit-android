@@ -20,11 +20,6 @@ import android.graphics.Movie
 import android.util.Log
 import androidx.recyclerview.widget.DefaultItemAnimator
 import com.example.bibit.data.remote.model.CoinInfo
-
-
-
-
-
 class HomeActivity : BaseActivity(), HomeContract.View {
     @Inject
     lateinit var homePresenter: HomePresenter

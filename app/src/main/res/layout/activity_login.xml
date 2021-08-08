@@ -141,6 +141,7 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/edtusernamess"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/green_0BAE71"

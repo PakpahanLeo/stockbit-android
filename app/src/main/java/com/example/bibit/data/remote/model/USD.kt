@@ -9,5 +9,7 @@ data class USD(
     @SerializedName("TYPE") var type: String? = null,
     @SerializedName("MARKET") var market: String? = null,
     @SerializedName("FROMSYMBOL") var fromSymbol: String? = null,
-    @SerializedName("PRICE") var price: Float? = null
+    @SerializedName("PRICE") var price: Float? = null,
+    @SerializedName("HIGHDAY") var highDay: Float? = null,
+    @SerializedName("FLAGS") var flags: Int? = null
 ) : Parcelable

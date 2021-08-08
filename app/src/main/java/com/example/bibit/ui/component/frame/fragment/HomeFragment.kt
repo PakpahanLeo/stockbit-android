@@ -1,16 +1,13 @@
 package com.example.bibit.ui.component.frame.fragment
 
-import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.annotation.VisibleForTesting
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.test.espresso.IdlingResource
 import butterknife.BindView
@@ -23,7 +20,6 @@ import com.example.bibit.ui.component.datacryp.HomeAdapter
 import com.example.bibit.ui.component.datacryp.HomeContract
 import com.example.bibit.ui.component.datacryp.HomePresenter
 import com.example.bibit.utils.EspressoIdlingResource
-import kotlinx.android.synthetic.main.fragment_home.*
 import org.jetbrains.anko.design.snackbar
 import javax.inject.Inject
 
@@ -42,6 +38,9 @@ class HomeFragment : BaseFragment(), HomeContract.View {
 
     @BindView(R.id.rl_news_list)
     lateinit var rl_news_list: RelativeLayout
+
+    @BindView(R.id.rv_news_list)
+    lateinit var rv_news_list: RecyclerView
 
     private val PAGE_START = 0
     private var isLoading = false
@@ -66,10 +65,10 @@ class HomeFragment : BaseFragment(), HomeContract.View {
     override fun initializePresenter() {
         homePresenter.setView(this)
         super.presenter = homePresenter
-
     }
 
     override fun initializeSponsoredList(news: List<SponsoredData>) {
+        //empty
 //        TODO("Not yet implemented")
     }
 
