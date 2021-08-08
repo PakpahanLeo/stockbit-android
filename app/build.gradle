@@ -30,6 +30,24 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    flavorDimensions 'version'
+    productFlavors {
+        dev {
+            dimension "version"
+            resValue 'string', 'apk_name', "Bibit - debug"
+            versionCode 1
+            versionName "1.0.0"
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def project = "Bibit"
+            def newApkName = project + ".apk"
+            outputFileName = new File(newApkName)
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
